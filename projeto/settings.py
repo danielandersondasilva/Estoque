@@ -9,6 +9,9 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+# import mimetypes
+
+# mimetypes.add_type("text/css", ".css", True)
 
 from pathlib import Path
 from decouple import config, Csv
@@ -25,7 +28,7 @@ SECRET_KEY = config("SECRET_KEY")
 #'django-insecure-^0-7v5yi=*(u$t$7%swdpnog=ckybn4wmy__@c4lam8s^18-ri'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config("DEGUB", default=False, cast=bool)
+DEBUG = config("DEBUG", default=False, cast=bool)
 
 
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", default=[], cast=Csv())
